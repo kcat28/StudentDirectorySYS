@@ -55,7 +55,7 @@ public class OpenRecordWindow extends JFrame {
 
             @Override
             public void changedUpdate(DocumentEvent e) {
-                // Plain text components do not fire these events
+                
             }
         });
 
@@ -109,10 +109,7 @@ public class OpenRecordWindow extends JFrame {
         if (fileExists) {
 
             searchresultBox.addItem(idNumb + ".txt");
-        } else {
-            // Display a message if the ID number does not exist
-            // JOptionPane.showMessageDialog(null, "ID number does not exist");
-        }
+        } 
     }
 
      private void openSelectedFile() {
@@ -123,7 +120,6 @@ public class OpenRecordWindow extends JFrame {
                 Path filePath = Paths.get(selectedFile);
                 List<String> lines = Files.readAllLines(filePath, StandardCharsets.UTF_8);
 
-                // Display the content in a new window (similar to NewRecordWindow)
                 displayFileContent(lines);
 
             } catch (Exception e) {
@@ -159,7 +155,7 @@ public class OpenRecordWindow extends JFrame {
         JPanel buttoPanel = new JPanel(); 
         buttoPanel.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
         buttoPanel.setBackground(new Color(162, 207, 113));
-          // Add a "Close" button to the content panel
+          
         JButton closeButton = new JButton("Close"){{
             setFocusable(false);
             addActionListener(e -> contentFrame.dispose());
